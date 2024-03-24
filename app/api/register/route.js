@@ -1,11 +1,27 @@
-import {connectMongoDB} from "../../../lib/mongodb";
+import connectMongoDB  from "../../../lib/mongodb";
 import User from "../../../models/user";
 import{NextResponse} from "next/server";
 import bcrypt from "bcryptjs";
 
 export async function POST(req){
+    console.log(req.body);
     try{
-        const {name, email, password}= await req.json();
+        const {name, email, password}= await req.body;
+        const hashedPassword = await bcrypt.hash(password, 10);
+
+        await connectMongoDB();
+        await User.create({name, email, password: hashedPassword});
+
+        return NextResponse.json({message: "User registered"},
+        {status: 201});
+    }catch(e){
+        // return NextResponse.json({message: e})
+        console.log(e);
+    }
+}
+export async function RegisterUser(data) {
+    try{
+        const {name, email, password}=data;
         const hashedPassword = await bcrypt.hash(password, 10);
 
         await connectMongoDB();
