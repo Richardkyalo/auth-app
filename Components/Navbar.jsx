@@ -17,7 +17,11 @@ export default function NavBar() {
           <div className="flex justify-between items-center py-3">
             {/* LOGO */}
             <Link href="/">
-              <h2 className="text-2xl text-green-600 font-bold cursor-pointer">SANDBOX</h2>
+              <div className='flex gap-1 items-center'>
+              <h2 className="text-2xl font-bold cursor-pointer italic">SAND</h2> 
+              <span className='text-black'><img src="/images/icon.webp" className='fill-current' width={30} height={30} alt="" /></span>
+              <h2 className="text-2xl text-green-500 font-bold cursor-pointer"> BOX</h2>
+              </div>
             </Link>
             {/* MENU ITEMS */}
             <div className={`hidden md:flex items-center space-x-4 ${navbar ? 'block' : 'hidden'}`}>
