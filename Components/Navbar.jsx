@@ -100,7 +100,7 @@ export default function NavBar() {
             </div>
             {/* Render the "Sign in" button on medium screens and above */}
             <div className="hidden md:block">
-              <a href="/login" className="p-2 px-4 rounded-full bg-green-500 text-sm text-white hover:text-white hover:bg-green-600">Sign in</a>
+              <a href="" className="p-2 px-4 rounded-full bg-green-500 text-sm text-white hover:text-white hover:bg-green-600">Sign in</a>
             </div>
           </div>
         </div>
@@ -134,7 +134,7 @@ export default function NavBar() {
           </ul>
         </div>
         <div className={`md:hidden mb-4 text-center ${navbar ? 'block' : 'hidden'}`}>
-          <a href="/login" className="p-2 px-4 rounded-full bg-green-500 text-sm text-white hover:text-white hover:bg-green-600" onClick={toggleNavbar}>Sign in</a>
+          <a href="" className="p-2 px-4 rounded-full bg-green-500 text-sm text-white hover:text-white hover:bg-green-600" onClick={toggleNavbar}>Sign in</a>
         </div>
       </nav>
 
