@@ -15,7 +15,7 @@ export default function Home() {
 
   <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet"></link>
   return (
-    <ThemeProvider defaultTheme="system" attribute="class">
+    <ThemeProvider defaultTheme="light" attribute="class">
       <main >
         <NavBar />
         <section id="home" className='h-screen' >
